@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(186deg, rgba(16, 53, 123, 1), rgba(23, 35, 91, 1) 93%);
+}
+
+.container {
+    width: 350px;
+    height: 550px;
+    color: aliceblue;
+    margin: auto;
+    border-radius: 20px;
+    background: rgb(19, 4, 93);
+    padding: 30px;
+    overflow: hidden;
+}
+
+.song-name {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.box-disk {
+    width: 200px;
+    height: 200px;
+    margin: 20px auto;
+    border-radius: 50%;
+    background: url('image.jpg') no-repeat center center;
+    background-size: cover;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    animation: rotate 5s linear infinite paused;
+    position: relative;
+}
+
+.box-disk:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30px;
+    height: 30px;
+    background: #13045d;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.box-disk.play {
+    animation-play-state: running;
+}
+
+.music-slider {
+    margin-top: 20px;
+}
+
+.seek-bar {
+    width: 100%;
+    -webkit-appearance: none;
+    appearance: none;
+    background: #ccc;
+    height: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.seek-bar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 1px;
+    height: 20px;
+    border-radius: 50%;
+    background: forestgreen;
+    box-shadow: -400px 0 0 400px royalblue;
+    cursor: pointer;
+}
+
+.time-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.controls {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.btn {
+    border: none;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    border-radius: 50%;
+    background: coral;
+    color: white;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background: lightcoral;
+    transform: scale(1.1);
+}
+
+.btn-play {
+	position: relative;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+/*    font-size: 24px;*/
+    background: coral;
+    cursor: pointer;
+    border: none;
+/*    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);*/
+}
+
+.btn-play:hover {
+    background: lightcoral;
+    transform: scale(1.2);
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
